@@ -1,6 +1,7 @@
 import FeaturedBooksSection from "@/components/home/FeaturedBooksSection/FeaturedBooksSection";
 import GenresSection from "@/components/home/GenresSection";
 import HeroSection from "@/components/home/HeroSection";
+import TopAuthorsSection from "@/components/home/TopAuthorsSection";
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
       <HeroSection />
       <GenresSection />
       <FeaturedBooksSection/>
+      <TopAuthorsSection />
     </main>
   );
 }

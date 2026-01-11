@@ -1,0 +1,142 @@
+[
+  {
+    "title": "Love in Paris",
+    "author": "Emily Rose",
+    "description": "A heartwarming romance set in the streets of Paris, exploring love and second chances.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Love+in+Paris",
+    "genre": "6963cc2c30029c7ed03f8f6f"
+  },
+  {
+    "title": "Eternal Embrace",
+    "author": "Daniel Hart",
+    "description": "Two souls destined to find each other despite the odds in this enchanting romance.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Eternal+Embrace",
+    "genre": "6963cc2c30029c7ed03f8f6f"
+  },
+  {
+    "title": "The Time Traveler's Diary",
+    "author": "Samantha Lee",
+    "description": "A gripping tale of love and loss across different eras in historical fiction.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Time+Traveler's+Diary",
+    "genre": "6963cc3e30029c7ed03f8f72"
+  },
+  {
+    "title": "Shadows of the Past",
+    "author": "Mark Sullivan",
+    "description": "An epic historical fiction novel following secrets buried through generations.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Shadows+of+the+Past",
+    "genre": "6963cc3e30029c7ed03f8f72"
+  },
+  {
+    "title": "The Silent Killer",
+    "author": "Alex Greene",
+    "description": "A thriller that keeps you on the edge of your seat until the last page.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=The+Silent+Killer",
+    "genre": "6963cc5d30029c7ed03f8f75"
+  },
+  {
+    "title": "Midnight Pursuit",
+    "author": "Olivia Carter",
+    "description": "A high-stakes thriller filled with twists, turns, and suspense.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Midnight+Pursuit",
+    "genre": "6963cc5d30029c7ed03f8f75"
+  },
+  {
+    "title": "Unlock Your Potential",
+    "author": "James Allen",
+    "description": "Self-help guide to achieving your personal and professional best.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Unlock+Your+Potential",
+    "genre": "6963cc6530029c7ed03f8f78"
+  },
+  {
+    "title": "Mindset Mastery",
+    "author": "Clara Benson",
+    "description": "Learn the techniques to cultivate a growth mindset and succeed.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Mindset+Mastery",
+    "genre": "6963cc6530029c7ed03f8f78"
+  },
+  {
+    "title": "The Innovators",
+    "author": "Walter Isaacson",
+    "description": "Biography of the pioneers who shaped the digital age.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=The+Innovators",
+    "genre": "6963cc7330029c7ed03f8f7b"
+  },
+  {
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "description": "An intimate biography of the visionary Apple co-founder.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Steve+Jobs",
+    "genre": "6963cc7330029c7ed03f8f7b"
+  },
+  {
+    "title": "The Quest of Teens",
+    "author": "Lila Anderson",
+    "description": "Adventure and self-discovery for young adults navigating life.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=The+Quest+of+Teens",
+    "genre": "6963cc8730029c7ed03f8f7f"
+  },
+  {
+    "title": "Rising Stars",
+    "author": "Ethan Knight",
+    "description": "A captivating YA novel about friendship, love, and coming-of-age challenges.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Rising+Stars",
+    "genre": "6963cc8730029c7ed03f8f7f"
+  },
+  {
+    "title": "The World Explained",
+    "author": "David Attenborough",
+    "description": "A fascinating dive into real-world events and natural wonders.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=The+World+Explained",
+    "genre": "6963cc8f30029c7ed03f8f82"
+  },
+  {
+    "title": "Science Made Simple",
+    "author": "Jane Foster",
+    "description": "Non-fiction guide making complex science topics easy to understand.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Science+Made+Simple",
+    "genre": "6963cc8f30029c7ed03f8f82"
+  },
+  {
+    "title": "Romance in Rome",
+    "author": "Clara Monroe",
+    "description": "A passionate love story set against the backdrop of ancient Rome.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Romance+in+Rome",
+    "genre": "6963cc2c30029c7ed03f8f6f"
+  },
+  {
+    "title": "Victorian Secrets",
+    "author": "Henry Collins",
+    "description": "Historical fiction unveiling the hidden lives of Victorian society.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Victorian+Secrets",
+    "genre": "6963cc3e30029c7ed03f8f72"
+  },
+  {
+    "title": "Edge of Fear",
+    "author": "Sophia Lane",
+    "description": "A thriller that will keep your pulse racing from start to finish.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Edge+of+Fear",
+    "genre": "6963cc5d30029c7ed03f8f75"
+  },
+  {
+    "title": "Personal Growth 101",
+    "author": "Michael Johnson",
+    "description": "Self-help book with actionable steps to improve daily life.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Personal+Growth+101",
+    "genre": "6963cc6530029c7ed03f8f78"
+  },
+  {
+    "title": "Life of a Genius",
+    "author": "Albert Newton",
+    "description": "Biography highlighting the life and struggles of a remarkable mind.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Life+of+a+Genius",
+    "genre": "6963cc7330029c7ed03f8f7b"
+  },
+  {
+    "title": "Adventure Awaits",
+    "author": "Ella Brown",
+    "description": "A young adult story full of quests, challenges, and self-discovery.",
+    "coverImage": "https://via.placeholder.com/150x220.png?text=Adventure+Awaits",
+    "genre": "6963cc8730029c7ed03f8f7f"
+  }
+]
