@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BookCard from "./BookCard";
 
 interface Book {
@@ -34,7 +35,13 @@ const BooksGrid = ({ books, loading }: Props) => {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {books.map((book) => (
-        <BookCard key={book._id} book={book} />
+        <Link
+          key={book._id}
+          href={`/books/${book._id}`}
+          className="block" // Make the entire card clickable
+        >
+          <BookCard book={book} />
+        </Link>
       ))}
     </div>
   );
