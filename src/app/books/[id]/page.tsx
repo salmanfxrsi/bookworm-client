@@ -1,6 +1,8 @@
-"use client"; // <-- Important: allows useState, useEffect, etc.
+"use client";
 
 import React, { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import BookDetailsHeader from "./components/BookDetailsHeader";
 import BookActions from "./components/BookActions";
 import AddReviewForm from "./components/AddReviewForm";
@@ -28,25 +30,31 @@ interface Props {
 
 const BookDetailsPage: React.FC<Props> = ({ params }) => {
   const { id } = params;
+  const router = useRouter();
+  const { data: session, status } = useSession();
 
   const [book, setBook] = useState<Book | null>(null);
   const [reviews, setReviews] = useState<Review[]>([]);
 
   useEffect(() => {
-    // Fetch book data from API
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/books/${id}`)
-      .then((res) => res.json())
-      .then((data) => setBook(data));
-  }, [id]);
+    if (status === "unauthenticated") {
+      router.push("/auth/login");
+    }
+  }, [status, router]);
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/books/${id}`)
+        .then((res) => res.json())
+        .then((data) => setBook(data));
+    }
+  }, [id, status]);
 
   const handleReviewAdded = (review: Omit<Review, "id">) => {
-    setReviews((prev) => [
-      ...prev,
-      { ...review, id: Date.now().toString() },
-    ]);
+    setReviews((prev) => [...prev, { ...review, id: Date.now().toString() }]);
   };
 
-  if (!book) return <p>Loading book details...</p>;
+  if (status === "loading" || !book) return <p>Loading book details...</p>;
 
   return (
     <div className="p-6 space-y-6">
