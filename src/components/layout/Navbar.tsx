@@ -8,7 +8,7 @@ const Navbar = () => {
 
   if (status === "loading") return null;
 
-  const dashboardRoute = session?.user?.role === "admin" ? "/admin/pending-reviews" : "/dashboard/wishlist";
+  const dashboardRoute = session?.user?.role === "admin" ? "/admin/books" : "/dashboard/wishlist";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-200/60 bg-white/70 backdrop-blur-md dark:border-zinc-800 dark:bg-black/70">
