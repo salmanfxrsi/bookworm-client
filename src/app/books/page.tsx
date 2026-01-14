@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 import BooksHeader from "@/components/books/BooksHeader";
 import BooksFilters from "@/components/books/BooksFilters";
@@ -25,6 +27,9 @@ const LIMIT = 8;
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const BooksPage = () => {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
   const [search, setSearch] = useState("");
   const [genre, setGenre] = useState("");
   const [books, setBooks] = useState<Book[]>([]);
@@ -32,6 +37,12 @@ const BooksPage = () => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.push("/auth/login");
+    }
+  }, [status, router]);
 
   useEffect(() => {
     const fetchGenres = async () => {
@@ -49,7 +60,6 @@ const BooksPage = () => {
       setLoading(true);
 
       const currentPage = 1;
-
       const params = new URLSearchParams();
       if (search) params.append("search", search);
       if (genre) params.append("genre", genre);
@@ -79,7 +89,7 @@ const BooksPage = () => {
       params.append("page", page.toString());
       params.append("limit", LIMIT.toString());
 
-      const res = await fetch(`${API_URL}/api/books?${params.toString()}`);
+      const res = await fetch(`${API_URL}/books?${params.toString()}`);
       const data = await res.json();
 
       setBooks(data.data);
@@ -89,6 +99,8 @@ const BooksPage = () => {
 
     if (page > 1) fetchBooks();
   }, [page]);
+
+  if (status === "loading") return <div>Loading...</div>;
 
   return (
     <section className="min-h-screen bg-zinc-50 dark:bg-black">

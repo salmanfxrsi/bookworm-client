@@ -11,6 +11,7 @@ interface Route {
 const routes: Route[] = [
   { name: "Books", path: "/admin/books" },
   { name: "Reviews", path: "/admin/reviews" },
+  { name: "Tutorials", path: "/admin/tutorials" },
 ];
 
 export default function TopNavbar() {
