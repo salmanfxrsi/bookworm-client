@@ -28,7 +28,7 @@ export default function TopNavbar() {
           <span
             className={`px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
               pathname === route.path
-                ? "bg-white/50 text-gray-900 font-semibold shadow-md"
+                ? "bg-white/50 text-emerald-600 shadow-md"
                 : "text-gray-700 hover:bg-white/30 hover:shadow-sm"
             }`}
           >
