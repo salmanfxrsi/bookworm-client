@@ -10,6 +10,7 @@ interface Route {
 
 const routes: Route[] = [
   { name: "Books", path: "/admin/books" },
+  { name: "Genres", path: "/admin/genres" },
   { name: "Reviews", path: "/admin/reviews" },
   { name: "Tutorials", path: "/admin/tutorials" },
 ];
