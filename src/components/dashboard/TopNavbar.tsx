@@ -9,7 +9,11 @@ interface Route {
   path: string;
 }
 
-const routes: Route[] = [{ name: "My Books", path: "/dashboard/my-books" }];
+const routes: Route[] = [
+  { name: "Wishlist", path: "/dashboard/wishlist" },
+  { name: "Ongoing", path: "/dashboard/ongoing" },
+  { name: "Completed", path: "/dashboard/completed" },
+];
 
 export default function TopNavbar() {
   const pathname = usePathname();
