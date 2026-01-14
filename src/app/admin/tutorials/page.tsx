@@ -198,7 +198,6 @@ export default function AdminTutorialsPage() {
         </button>
       </div>
 
-      {/* Tutorials Grid */}
       {tutorials.length === 0 ? (
         <p className="text-center py-20 text-zinc-500">No tutorials found.</p>
       ) : (
