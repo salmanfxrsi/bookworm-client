@@ -15,9 +15,17 @@ export const authOptions: NextAuthOptions = {
             body: JSON.stringify(credentials),
           }
         );
+
         const user = await res.json();
         if (!res.ok) return null;
-        return user; 
+
+        return {
+          id: user._id, // ✅ MAP HERE
+          name: user.name,
+          email: user.email,
+          role: user.role,
+          photo: user.photo,
+        };
       },
     }),
   ],
@@ -28,22 +36,26 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
+        token.name = user.name;
+        token.email = user.email;
         token.role = user.role;
         token.photo = user.photo;
       }
       return token;
     },
+
     async session({ session, token }) {
       session.user = {
-        id: token.id!,
-        name: token.name!,
-        email: token.email!,
+        id: token.id as string,
+        name: token.name as string,
+        email: token.email as string,
         role: token.role as "admin" | "user",
-        photo: token.photo,
+        photo: token.photo as string,
       };
       return session;
     },
   },
+
   pages: { signIn: "/auth/login" },
 };
 

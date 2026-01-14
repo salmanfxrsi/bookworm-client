@@ -1,8 +1,9 @@
 "use client";
 
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
 
 interface Book {
   _id: string;
@@ -14,8 +15,12 @@ interface Book {
 }
 
 export default function BookDetails({ bookId }: { bookId: string }) {
+  const { data: session } = useSession();
+
   const [book, setBook] = useState<Book | null>(null);
   const [loading, setLoading] = useState(true);
+  const [adding, setAdding] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     axios
@@ -24,10 +29,35 @@ export default function BookDetails({ bookId }: { bookId: string }) {
       .finally(() => setLoading(false));
   }, [bookId]);
 
+  const handleAddToShelves = async () => {
+    if (!session?.user?.id) {
+      setMessage("Please login first");
+      return;
+    }
+
+    try {
+      setAdding(true);
+      setMessage("");
+
+      await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/shelves`, {
+        user: session.user.id,
+        book: bookId,
+        status: "want",
+      });
+
+      setMessage("Book added to your shelves!");
+    } catch (err) {
+      const error = err as AxiosError<{ message: string }>;
+      setMessage(error.response?.data?.message || "Failed to add book");
+    } finally {
+      setAdding(false);
+    }
+  };
+
   if (loading) return <p className="text-center py-20">Loading book...</p>;
   if (!book) return <p className="text-center py-20">Book not found.</p>;
 
-  const handleAddToShelves = () => alert("Book added to your shelves!");
+  console.log("SESSION 👉", session);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white/50 dark:bg-black/50 backdrop-blur-md p-6 rounded-xl shadow-lg">
@@ -48,7 +78,8 @@ export default function BookDetails({ bookId }: { bookId: string }) {
         <h1 className="text-4xl font-bold text-zinc-900 dark:text-zinc-100">
           {book.title}
         </h1>
-        <p className="text-lg text-zinc-600 dark:text-zinc-400 mt-1">
+
+        <p className="text-lg text-zinc-600 dark:text-zinc-400">
           by {book.author}
         </p>
 
@@ -58,10 +89,15 @@ export default function BookDetails({ bookId }: { bookId: string }) {
 
         <button
           onClick={handleAddToShelves}
-          className="px-6 py-2 rounded-xl bg-emerald-600 text-white font-semibold shadow-md hover:bg-emerald-700 transition w-auto self-start"
+          disabled={adding}
+          className="px-6 py-2 rounded-xl bg-emerald-600 text-white font-semibold shadow-md hover:bg-emerald-700 disabled:opacity-50 transition w-fit"
         >
-          Add to Shelves
+          {adding ? "Adding..." : "Add to Shelves"}
         </button>
+
+        {message && (
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">{message}</p>
+        )}
       </div>
     </div>
   );
