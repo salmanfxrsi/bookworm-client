@@ -2,10 +2,10 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import TopNavbar from "@/components/admin/TopNavbar";
+import TopNavbar from "@/components/dashboard/TopNavbar";
 import { useSession } from "next-auth/react";
 
-export default function AdminLayout({
+export default function UserLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -15,15 +15,15 @@ export default function AdminLayout({
 
   useEffect(() => {
     if (status === "authenticated") {
-      if (session.user.role !== "admin") {
-        router.replace("/dashboard/my-books");
+      if (session.user.role !== "user") {
+        router.replace("/admin/pending-reviews");
       }
     }
   }, [session, status, router]);
 
   if (
     status === "loading" ||
-    (status === "authenticated" && session.user.role !== "admin")
+    (status === "authenticated" && session.user.role !== "user")
   ) {
     return (
       <div className="flex items-center justify-center min-h-screen">

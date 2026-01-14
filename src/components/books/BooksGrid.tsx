@@ -38,7 +38,7 @@ const BooksGrid = ({ books, loading }: Props) => {
         <Link
           key={book._id}
           href={`/books/${book._id}`}
-          className="block" // Make the entire card clickable
+          className="block" 
         >
           <BookCard book={book} />
         </Link>

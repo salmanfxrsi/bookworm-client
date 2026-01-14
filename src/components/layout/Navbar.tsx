@@ -9,7 +9,7 @@ const Navbar = () => {
   if (status === "loading") return null;
 
   // Determine dashboard route based on role
-  const dashboardRoute = session?.user?.role === "admin" ? "/admin" : "/dashboard";
+  const dashboardRoute = session?.user?.role === "admin" ? "/admin/pending-reviews" : "/dashboard/my-books";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-zinc-200/60 bg-white/70 backdrop-blur-md dark:border-zinc-800 dark:bg-black/70">
