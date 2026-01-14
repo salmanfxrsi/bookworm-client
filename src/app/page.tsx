@@ -28,7 +28,9 @@ export default function HomePage() {
       <HeroSection />
       {/* <GenresSection /> */}
       {/* <FeaturedBooksSection/> */}
-      <TopAuthorsSection />
+      <div className="mx-auto">
+        <TopAuthorsSection />
+      </div>
       {/* <NewArrivalsSection /> */}
       <NewsletterSection />
     </main>

@@ -19,25 +19,25 @@ const authors: Author[] = [
   {
     id: "2",
     name: "George R.R. Martin",
-    avatar: "https://i.ibb.co/1bQY5jX/grrm.jpg",
+    avatar: "https://i.ibb.co.com/0jCLnNNT/image.jpg",
     booksCount: 20,
   },
   {
     id: "3",
     name: "Agatha Christie",
-    avatar: "https://i.ibb.co/mH7v4Yx/agatha.jpg",
+    avatar: "https://i.ibb.co.com/0jCLnNNT/image.jpg",
     booksCount: 85,
   },
   {
     id: "4",
     name: "Paulo Coelho",
-    avatar: "https://i.ibb.co/dKW7y8p/paulo.jpg",
+    avatar: "https://i.ibb.co.com/0jCLnNNT/image.jpg",
     booksCount: 30,
   },
   {
     id: "5",
     name: "Stephen King",
-    avatar: "https://i.ibb.co/YyMpjk6/stephen.jpg",
+    avatar: "https://i.ibb.co.com/0jCLnNNT/image.jpg",
     booksCount: 60,
   },
 ];

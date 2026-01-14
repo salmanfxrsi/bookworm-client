@@ -27,6 +27,12 @@ const HeroSection = () => {
             >
               Browse All Books
             </Link>
+            <Link
+              href="/tutorials"
+              className="inline-flex items-center justify-center rounded-full border border-emerald-600 px-6 py-3 text-lg font-medium text-emerald-600 transition hover:bg-emerald-50 hover:scale-105 dark:hover:bg-zinc-800 dark:border-emerald-500 dark:text-emerald-400"
+            >
+              See Tutorials
+            </Link>
           </>
         ) : (
           <Link
