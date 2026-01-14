@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BiHome } from "react-icons/bi";
 
 interface Route {
   name: string;
@@ -21,10 +22,23 @@ export default function TopNavbar() {
   return (
     <div
       className="fixed top-20 left-1/2 transform -translate-x-1/2 
-                    bg-white/20 backdrop-blur-xl border border-white/30 
-                    rounded-full shadow-lg flex justify-center py-3 px-6 space-x-6 z-50
-                    w-auto min-w-[300px] max-w-[800px]"
+                  bg-white/20 backdrop-blur-xl border border-white/30 
+                  rounded-full shadow-lg flex justify-center py-3 px-6 space-x-6 z-50
+                  w-auto min-w-[300px] max-w-[800px]"
     >
+      <Link href="/">
+        <span
+          className={`flex items-center px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${
+            pathname === "/"
+              ? "bg-white/50 text-emerald-600 shadow-md"
+              : "text-gray-700 hover:bg-white/30 hover:shadow-sm"
+          }`}
+        >
+          <BiHome className="mr-2 text-lg" />
+          Home
+        </span>
+      </Link>
+
       {routes.map((route) => (
         <Link key={route.path} href={route.path}>
           <span

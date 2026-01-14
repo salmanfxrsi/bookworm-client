@@ -17,7 +17,7 @@ const HeroSection = () => {
 
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
         <Link
-          href="/register"
+          href="/auth/register"
           className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-lg font-medium text-white shadow-lg transition hover:bg-emerald-500 hover:scale-105"
         >
           Get Started

@@ -8,7 +8,6 @@ const Navbar = () => {
 
   if (status === "loading") return null;
 
-  // Determine dashboard route based on role
   const dashboardRoute = session?.user?.role === "admin" ? "/admin/pending-reviews" : "/dashboard/my-books";
 
   return (
@@ -20,34 +19,6 @@ const Navbar = () => {
         >
           Book<span className="text-emerald-600">Worm</span>
         </Link>
-
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-600 dark:text-zinc-400">
-          <Link
-            href="/"
-            className="transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
-          >
-            Home
-          </Link>
-
-          <Link
-            href="/books"
-            className="transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
-          >
-            Books
-          </Link>
-          <Link
-            href="/genres"
-            className="transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
-          >
-            Genres
-          </Link>
-          <Link
-            href="/about"
-            className="transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
-          >
-            About
-          </Link>
-        </nav>
 
         <div className="flex items-center gap-4">
           {!session ? (
